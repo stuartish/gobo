@@ -37,7 +37,7 @@ class ZergBot(BotAI):
         if self.townhalls:
             hq = self.townhalls[0]
 
-        if self.supply_left / self.supply < 0.25 and not self.already_pending(UnitTypeId.OVERLORD):
+        if self.supply_left / self.units_created < 0.25 and not self.already_pending(UnitTypeId.OVERLORD):
             if larvae and self.can_afford(UnitTypeId.OVERLORD):
                 larvae.random.train(UnitTypeId.OVERLORD)
                 return
